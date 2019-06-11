@@ -23,21 +23,23 @@
          echo 'ceci est un extrait du texte' ,$text , '<br/><br/>';
 
          include(dirname(__FILE__) . '/fonctions/connexion.php');
-         $array = array('premier' =>'1','second' =>'2'
-         ,'trois' => '3');
-         foreach($array as $key => $reponse){
-             echo "C'est élément à pour clé : " , $key,
-             'et comme valeur : ' ,$reponse, '<br/>';
-         }
-         $req = $bdd->query('SELECT ID,lien_img FROM labo1');
+         
+         
+         //affichage des éléments de la base de données labo1
+         $req = $bdd->query('SELECT * FROM labo1');
 
-         foreach($req as $donnees)
+         foreach($req as $key => $value)
          { 
              ?>
-             ceci est un id : <?php echo $donnees['ID'];?><br/>
-             <img src='<?php echo $donnees['lien_img']?>'/>;
+             ceci est un id : 
+             <?php 
+             echo $value['ID'];?><br/>
+             <!--affichage de l'image !-->
+             <img style = 'max-height :480px; max-width : 640px'; 
+              src='<?php echo $value['img']?>'/>;
          <?php    
          }
+         
          ?>
          
      </body>
