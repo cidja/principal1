@@ -2,7 +2,8 @@
 include_once('/var/www/public/private/git/livres_lus_new/fonctions/connexion.php'); //inclusion du fichier connexion pour la base de données
 include_once('/var/www/public/private/git/livres_lus_new/fonctions/debug.php'); //inclusion du fichier debug avec les fonctions utiles pour debuger
 echo 'test';
-function ficheLivre($bdd){ 
+function ficheLivre(){ 
+  global $bdd;
     //j'ai mis argument $bdd sinon ça ne fonctionnait pas 
     //mais je ne comprends pas pourquoi ça ne fonctionnait pas
     $req = $bdd->query('SELECT id,titre,auteur,tome,nb_pages,debut,fin,remarques,img,
