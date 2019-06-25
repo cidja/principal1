@@ -1,0 +1,131 @@
+body {
+  font-size: 1.5em;
+  font-family: 'Orbitron', sans-serif;
+  }
+
+input[type=text]:focus {
+      border-color:#333;
+    }
+input[type=submit] {
+    padding:25px 150px; background:#ccc; border:0 none;
+    cursor:pointer;
+    border-radius: 5px;
+    font-size: 1.5em;
+    margin-left: 25%;
+    }
+
+input[type=text]{ /*On modifie tous les input type text*/
+  width : 80%;
+  height: 35px;
+  border: 2px solid black;
+  margin-bottom: 5px;
+  }
+input[type=date] {
+  width : 80%;
+  height: 35px;
+  border: 2px solid black;
+  margin-bottom: 5px;
+}
+input[type=number] {
+  width : 80%;
+  height: 35px;
+  border: 2px solid black;
+  margin-bottom: 5px;
+}
+
+.form_tableau {
+  display: grid;
+  grid-template-columns :  30% 30% 40%; /* avec 1fr  on sépare le tableau en deux colonnes égales */
+  grid-template-rows:      auto; /*ajoute automatiquement le nombre de lignes pour la grid */
+  grid-template-areas: /*template area utilisé pour mettre en forme la grille
+                        *(source: https://css-tricks.com/snippets/css/complete-guide-grid/)*/
+              'auteur_form auteur_form_reponse titre_img_couv' /* nommage des "cellules" pour les retrouver facilement */
+              'tome_form tome_form_reponse img_couv'
+              'nb_pages_form nb_pages_form_reponse img_couv'
+              'debut_form debut_form_reponse img_couv'
+              'fin_form fin_form_reponse img_couv'
+              'remarques_form remarques_form_reponse img_couv'
+              'img_form img_form_reponse img_couv'
+}
+#auteur_form {
+  grid-area : auteur_form;
+  padding-top: 15px;
+  
+}
+#auteur {
+  grid-area : auteur_form_reponse;
+  padding-top: 15px;
+}
+#tome_form {
+  grid-area: tome_form;
+  padding-top: 15px;
+  
+}
+#tome {
+  grid-area: tome_form_reponse;
+  padding-top: 15px;
+}
+#nb_pages_form {
+  grid-area: nb_pages_form;
+  padding-top: 15px;
+  
+}
+#nb_pages {
+  grid-area: nb_pages_form_reponse;
+  padding-top: 15px;
+}
+#debut_form {
+  grid-area: debut_form;
+  padding-top: 15px;
+  
+}
+#debut {
+  grid-area: debut_form_reponse;
+  padding-top: 15px;
+}
+#fin_form {
+  grid-area: fin_form;
+  padding-top: 15px;
+}
+#fin {
+  grid-area: fin_form_reponse;
+  padding-top: 15px;
+}
+#remarques_form {
+  grid-area: remarques_form;
+  padding-top: 15px;
+  
+}
+#remarques {
+  grid-area: remarques_form_reponse;
+  padding-top: 15px;
+}
+#img_form {
+  grid-area: img_form;
+  padding-right: 20px; /*pour laisser de l'espace avec la droite du formulaire afin d'aérer ce dernier */
+  padding-top: 15px;
+}
+#img {
+  grid-area: img_form_reponse;
+  padding-top: 15px;
+}
+#titre_img_couv {
+  
+}
+.text_img {
+  grid-area: titre_img_couv;
+  padding: 15px;
+  text-align: center;
+  font-size: 1.5em;
+  border: solid 4px black;
+  box-shadow: 4px 4px 9px black;
+}
+.couv_presente {
+  grid-area: img_couv;
+  margin-top: 15px;
+  margin-left: 25%; /*pour éloigner et centrer dans la cellule de la grid */
+  max-height: 500px; /*hauteur maximale de l'image si plus grande sera automatiquement redimensionnée */
+  max-width: 320px; /*largeur maximale de l'image si plus grande sera automatiquement redimensionnée */
+  
+}
+

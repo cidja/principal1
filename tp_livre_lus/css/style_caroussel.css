@@ -1,0 +1,7 @@
+.img_couv_bd {
+    margin-top: 15px;
+    margin-right: 20px;
+    height: 475px; /*hauteur maximale de l'image si plus grande sera automatiquement redimensionnée */
+    
+    /*max-width: 348px; /*largeur maximale de l'image si plus grande sera automatiquement redimensionnée */
+  }

@@ -1,0 +1,50 @@
+/* Style sur la page d'accueil */
+body{
+    background-color: #212121;
+}
+#titre_accueil_choix {
+	text-align: center;
+	color: #ffffff;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-top: 0px;
+	
+}
+    .choix_livres{
+        display: inline-block; /*va prendre uniquement la largeur dont il a besoin en type inline-block pour le redimensionner comme je le veux*/
+        position: relative;
+        margin-left: 15%;
+        text-align: center; /*on centre le text */
+        padding: 1%; /* padding correspond aux marges extérieures (source: https://www.pierre-giraud.com/html-css/cours-complet/marges-css.php) */
+        border : solid #665c84 6px; /* rajout d'un contour */
+        border-radius: 15px; /*pour arrondir les angles des boites */
+        background-color: #665c84;
+        box-shadow: 20px 20px 20px #665c84;
+    }
+        #a_choix_livres { /*class choix dans fichier accueil_principal.php */
+            font-size: 1.8em;
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .img_ji {  /*redimensionnement de l'image de couverture livres pour qu'elle soit de même taille que la couv bd */
+            width: 348px;
+            height: 475px;
+        }
+
+    .choix_bd {
+        display: inline-block;
+        position: relative;
+    margin-left: 20%;
+        text-align: center; /*on centre le text */
+        padding: 1%; /* padding correspond aux marges extérieures (source: https://www.pierre-giraud.com/html-css/cours-complet/marges-css.php) */
+        border: solid #71a0a5 6px; 
+        border-radius: 15px;
+        background-color: #71a0a5;
+        box-shadow: 20px 20px 20px #71a0a5; /* rajout d'un contour */
+        font-family: arial;
+    }
+        #a_choix_bd {
+            font-size: 1.8em;
+            color: #4a5a6a;
+            text-decoration: none;
+            }

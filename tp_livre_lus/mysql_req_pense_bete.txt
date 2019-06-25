@@ -1,0 +1,33 @@
+requête insert
+
+INSERT INTO `livres_lus` (`titre`, `auteur`, `tome`, `debut`, `fin`, `remarques`, `img`, `date_ajout`)
+VALUES('ho', 'auteur', 'tome', 'debut', 'fin', 'remarques', 'img', now())
+
+
+maj
+UPDATE `test_id` SET
+`id` = '1',
+`img` = 'blabla2'
+WHERE `id` = '1';
+
+(0.000 s)
+
+celle-ci OK penser aux caractères d'échappement
+UPDATE `livres_lus` SET `id` = "51", `img` = "blabla4" WHERE `id` = "51"
+
+Pour un update de l'image uniquement 
+UPDATE `livres_lus` SET `img`= 'test image'  WHERE `id`= 7;
+
+
+requête update dans adminer
+UPDATE `livres_lus` SET
+`id` = '74',
+`titre` = 'TEST',
+`auteur` = 'TEST',
+`tome` = '4',
+`debut` = '',
+`fin` = '',
+`remarques` = '',
+`img` = '',
+`date_ajout` = now()
+WHERE `id` = '74';

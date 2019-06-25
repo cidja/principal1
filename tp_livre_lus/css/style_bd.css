@@ -1,0 +1,204 @@
+body{
+  font-family: 'Fredoka One', cursive;
+}
+#titre_principal_haut_page { /*que l'on retrouve en haut de chaque pages */
+	text-align: center;
+	text-decoration : underline;
+	padding-bottom: 40px;/* pour aérer la page en dessous */
+}
+
+#compteur_total {
+  text-align: center; /*quatre lignes en dessous utilisé pour centrer le bloc en css (source: https://www.alsacreations.com/article/lire/539-Centrer-les-elements-ou-un-site-web-en-CSS.html) */
+ border-style: groove;
+ margin-left: auto;
+ margin-right: auto;
+ margin-bottom: 60px;
+ width: 600px;
+padding: 15px; /*pour aérer le contenu dans le border */
+ font-size: 1.3em;
+}
+    #texte_classement_bouton {
+      font-size: 1.3em;
+    }
+    #classement_boutons {
+      margin-right: auto; /*2 lignes en dessous utilisé pour centrer le bloc en css (source: https://www.alsacreations.com/article/lire/539-Centrer-les-elements-ou-un-site-web-en-CSS.html) */
+      margin-left: auto;
+      width: 75%; 
+    }
+input[type=submit]
+    { /*pour donner du style aux boutons submit repris de style_form_modif.css*/
+    padding:15px 70px; background:#ccc; border:0 none;
+    cursor:pointer;
+		margin-bottom : 5px; 
+    margin-top : 15px; /*écarte les boutons des éléments du dessus */
+		margin-left: 150px; /*pour centrer les boutons dans les tableau */
+		border-radius: 40px; /* choisis l'angle des arrondis des boutons */
+    }
+
+input[type=text]:focus /*pour donner du style aux zones de texte repris de style_form_modif.css*/
+  {
+      border-color:#333;
+  }
+input[type=button] {
+  /*style des boutons de navigation du tri pour bd */
+  padding:15px 70px; background:#ccc; border:0 none;
+  cursor:pointer;
+	margin-bottom : 5px; 
+  margin-top : 15px; /*écarte les boutons des éléments du dessus */
+	margin-left: 150px; /*pour centrer les boutons dans les tableau */
+	border-radius: 40px; /* choisis l'angle des arrondis des boutons */
+  font-size: 1.2em;
+  font-family: 'Fredoka One', cursive;
+  }
+	
+	input[type=button]:hover {
+		background:linear-gradient(#90C, #8600B3); /* source: https://www.css3create.com/Hover-avec-transitions# */
+	}
+	
+.tri { /*lien hypertexte sur les buttons pour les tris */
+  text-decoration: none;
+  }
+
+  #accueil_lien{
+    padding:5px 15px; background:#ccc; border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin-bottom : 5px;
+    margin-top : 5px;
+    text-decoration: none;
+    font-size: 2em;
+  }
+  #rajout{
+    padding:5px 15px; background:#ccc; border:0 none;
+      cursor:pointer;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+      margin-bottom : 5px;
+      margin-top : 5px;
+      text-decoration: none;
+      font-size: 2em;
+  }
+  
+  .tableau_bd {
+  display: grid;
+  
+  grid-template-columns:   40% 30% 30%; /* avec 1fr  on sépare le tableau en deux (source: https://css-tricks.com/snippets/css/complete-guide-grid/)*/
+  grid-template-rows:      auto; /*ajoute automatiquement le nombre de lignes pour la grid */
+  grid-template-areas:  /*template area utilisé pour mettre en forme la grille
+                        *(source: https://css-tricks.com/snippets/css/complete-guide-grid/)*/
+    "serie serie_reponse img_couv" /* nommage des "cellules" pour les retrouver facilement c'est en fait un tablea qu'on voit en dessous*/
+    "titre titre_reponse img_couv"
+    "scenario scenario_reponse img_couv"
+    "dessin dessin_reponse img_couv"
+    "album_numero album_numero_reponse img_couv"
+    "genre genre_reponse img_couv"
+    "remarques remarques_reponse img_couv" 
+    "date_ajout date_ajout_reponse img_couv"
+    /* "img_couv img_couv" */
+    "bouton_modif bouton_modif img_couv"
+    "bouton_supprimer bouton_supprimer img_couv";
+ 
+  
+  padding: 15px; /* Pour aérer les écritures dans le tableau*/
+  margin-right: 50px; /*Augmentation de la marge de droite pour aérer le tableau == margin_left pour le centrage */
+  margin-left: 50px; /* voir au dessus */
+  font-weight: 400; /* largeur de la police */
+  font-size: 1.3em; /* taille de la police */
+  border : solid black 2px; /*affiche une bordure tout autour de chaque tableaux de résultat de la boucle while*/
+}
+a {
+  font-weight: bold; /*On met tous les liens en gras */
+}
+.id {
+  grid-area :   id;
+  padding-top: 15px;
+}
+.id_reponse {
+  grid-area :   idr;
+  padding-top: 15px;
+}
+.serie {
+  grid-area :   serie;
+  padding-top: 15px;
+}
+.serie_reponse{
+  grid-area :   serie_reponse;
+  padding-top: 15px;
+  font-size: 1.3em;
+}
+.titre {
+  grid-area: titre;
+  padding-top: 15px;
+}
+.titre_reponse {
+  grid-area : titre_reponse;
+  padding-top: 15px;
+}
+.scenario {
+    grid-area:  scenario;
+    padding-top: 15px;
+}
+.scenario_reponse{
+  grid-area:  scenario_reponse;
+  padding-top: 15px;
+}
+.dessin {
+  grid-area: dessin;
+  padding-top: 15px;
+}
+.dessin_reponse {
+  grid-area: dessin_reponse;
+  padding-top: 15px;
+}
+.album_numero {
+  grid-area :  album_numero;
+  padding-top: 15px;
+}
+.album_numero_reponse {
+  grid-area:  album_numero_reponse;
+  padding-top: 15px;
+}
+.genre {
+  grid-area: genre;
+  padding-top: 15px;
+}
+.genre_reponse {
+  grid-area: genre_reponse;
+  padding-top: 15px;
+}
+.remarques {
+  grid-area:  remarques;
+  padding-top: 15px;
+}
+.remarques_reponse {
+  grid-area:  remarques_reponse;
+  padding-top: 15px;
+}
+.date_ajout {
+  grid-area: date_ajout;
+  padding-top: 15px;
+}
+.date_ajout_reponse {
+  grid-area:  date_ajout_reponse;
+  padding-top: 15px;
+}
+.img_couv {
+    grid-area:  img_couv;
+    text-align: center;
+}
+.bouton_modif {
+  grid-area: bouton_modif;
+  font-family: 'Fredoka One', cursive;
+}
+.bouton_supprimer {
+  grid-area: bouton_supprimer;
+  font-family: 'Fredoka One', cursive;
+}
+
+.img_couv_bd {
+    margin-top: 15px;
+    margin-left: 25%; /*pour éloigner et centrer dans la cellule de la grid */
+    max-height: 475px; /*hauteur maximale de l'image si plus grande sera automatiquement redimensionnée */
+    max-width: 348px; /*largeur maximale de l'image si plus grande sera automatiquement redimensionnée */
+  }

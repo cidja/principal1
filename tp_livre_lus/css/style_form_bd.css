@@ -1,0 +1,117 @@
+body {
+  font-size: 1.5em;
+  font-family: 'Fredoka One', cursive;
+}
+
+input[type=text]:focus {
+      border-color:#333;
+    }
+input[type=submit] {
+    padding:25px 150px; background:#ccc; border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    font-size: 1.5em;
+    margin-left: 25%;
+    }
+
+input[type=text]{ /*On modifie tous les input type text*/
+  width : 80%;
+  height: 35px;
+  border: 2px solid black;
+  margin-bottom: 5px;
+  }
+input[type=date] {
+  width : 80%;
+  height: 35px;
+  border: 2px solid black;
+  margin-bottom: 5px;
+}
+input[type=number] {
+  width : 80%;
+  height: 35px;
+  border: 2px solid black;
+  margin-bottom: 5px;
+}
+
+.form_tableau {
+  display: grid;
+  grid-template-columns :  30% 30% 40%; /* avec 1fr  on sépare le tableau en deux colonnes égales */
+  grid-template-rows:      auto; /*ajoute automatiquement le nombre de lignes pour la grid */
+  grid-template-areas: /*template area utilisé pour mettre en forme la grille
+                        *(source: https://css-tricks.com/snippets/css/complete-guide-grid/)*/
+              'scenario_form scenario_form_reponse text_img' /* nommage des "cellules" pour les retrouver facilement */
+              'dessin_form dessin_form_reponse couv_presente'
+              'album_numero_form album_numero_form_reponse couv_presente'
+              'genre_form genre_form_reponse couv_presente'
+              'remarques_form remarques_form_reponse couv_presente'
+              'img_couv_form img_couv_form_reponse couv_presente'
+}
+#scenario_form {
+  grid-area: scenario_form;
+  
+}
+#scenario {
+  grid-area: scenario_form_reponse;
+}
+#dessin_form {
+  grid-area: dessin_form;
+  
+}
+#dessin {
+  grid-area: dessin_form_reponse;
+}
+#album_numero_form {
+  grid-area: album_numero_form;
+  
+}
+#album_numero {
+  grid-area: album_numero_form_reponse;
+}
+#genre_form {
+  grid-area: genre_form;
+  
+}
+#genre {
+  grid-area: genre_form_reponse;
+}
+#fin_form {
+  grid-area: fin_form;
+}
+#fin {
+  grid-area: fin_form_reponse;
+}
+#remarques_form {
+  grid-area: remarques_form;
+}
+#remarques {
+  grid-area: remarques_form_reponse;
+}
+#img_couv_form {
+  grid-area: img_couv_form;
+  
+}
+#img_couv {
+  grid-area: img_couv_form_reponse;
+}
+
+.text_img {
+  grid-area: text_img;
+  display: inline;
+  margin-left: 24%;
+
+  padding: 15px;
+  text-align: center;
+  font-size: 1.5em;
+  border: solid 4px black;
+  box-shadow: 4px 4px 9px black;
+}
+.couv_presente {
+  grid-area: couv_presente;
+  display: block;
+  margin-left: 28%;
+  margin-top: 50px;
+  max-height: 500px;
+  max-width: 320px;
+}
+

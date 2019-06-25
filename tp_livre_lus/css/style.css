@@ -1,0 +1,203 @@
+/* code couleur du site : https://colorhunt.co/palette/139521 */
+
+body {
+	width: 100%; /*pour l'utilisation des % dans les boites div en dessous .choix_bd (source: https://www.pierre-giraud.com/html-css/cours-complet/media-queries-css-responsive.php)*/
+	font-family: 'Orbitron', sans-serif;
+}
+
+
+#accueil_lien{
+    padding:5px 15px; background:#ccc; border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin-bottom : 5px;
+    margin-top : 5px;
+    text-decoration: none;
+    font-size: 2em;
+  }
+#rajout{
+  padding:5px 15px; background:#ccc; border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin-bottom : 5px;
+    margin-top : 5px;
+    text-decoration: none;
+    font-size: 2em;
+}
+/*dans accueuil_principal.php */
+#titre_principal_haut_page {
+	text-align: center;
+	text-decoration : underline;
+	padding-bottom: 40px;/* pour aérer la page en dessous */
+}
+
+#compteur_total {
+	   text-align: center; /*quatre lignes en dessous utilisé pour centrer le bloc en css (source: https://www.alsacreations.com/article/lire/539-Centrer-les-elements-ou-un-site-web-en-CSS.html) */
+    border-style: groove;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 60px;
+    width: 600px;
+		padding: 15px; /*pour aérer le contenu dans le border */
+		font-size: 1.3em;
+}
+
+.img_couv_livre { /*redimensionnement de l'image de couverture si plus petite que les valeurs en dessous ne bouge pas par contre si plus grandes elles sont redimensionnées */
+		max-height: 500px;
+  max-width: 320px;
+}
+
+input[type=submit]
+    { /*pour donner du style aux boutons submit repris de style_form_modif.css*/
+    padding:15px 70px; background:#ccc; border:0 none;
+    cursor:pointer;
+		margin-bottom : 5px; 
+    margin-top : 15px; /*écarte les boutons des éléments du dessus */
+		margin-left: 150px; /*pour centrer les boutons dans les tableau */
+		border-radius: 40px; /* choisis l'angle des arrondis des boutons */
+		}
+
+input[type=text]:focus /*pour donner du style aux zones de texte repris de style_form_modif.css*/
+  {
+      border-color:#333;
+  }
+		
+		a {
+  font-weight: bold; /*On met tous les liens en gras */
+		}
+		
+		input[type=button] {
+  /*style des boutons de navigation du tri pour bd */
+  padding:15px 70px; background:#ccc; border:0 none;
+  cursor:pointer;
+	margin-bottom : 5px; 
+  margin-top : 40px; /*écarte les boutons des éléments du dessus */
+	margin-left: 150px; /*pour centrer les boutons dans les tableau */
+	border-radius: 40px; /* choisis l'angle des arrondis des boutons */
+  font-size: 1.2em;
+  font-family: 'Orbitron', sans-serif;
+}
+	
+.tableau_livres {
+  display: grid;
+  grid-template-columns :  40% 40% 20%; /* avec 1fr  on sépare le tableau en deux colonnes égales */
+  grid-template-rows:      auto; /*ajoute automatiquement le nombre de lignes pour la grid */
+  grid-template-areas: /*template area utilisé pour mettre en forme la grille
+                        *(source: https://css-tricks.com/snippets/css/complete-guide-grid/)*/
+              'titre titre_reponse img_couv'    /* nommage des "cellules" pour les retrouver facilement */
+              'auteur auteur_reponse img_couv'    
+              'tome tome_reponse img_couv'
+              'nb_pages nb_pages_reponse img_couv'
+              'debut debut_reponse img_couv'
+              'fin fin_reponse img_couv'
+							'decompte_lecture decompte_lecture_reponse img_couv'
+              'remarques remarques_reponse img_couv'    
+              'date_ajout date_ajout_reponse img_couv'
+							'temps_lecture temps_lecture img_couv'
+              'bouton_modifier bouton_modifier img_couv' 
+              'bouton_supprimer bouton_supprimer img_couv';
+
+padding: 15px; /* Pour aérer les écritures dans le tableau*/
+margin-right: 50px; /*Augmentation de la marge de droite pour aérer le tableau == margin_left pour le centrage */
+margin-left: 50px; /* voir au dessus */
+  /* font-family: 'Orbitron', sans-serif;    mis en commentaires car mis sur toute la page via le body */ 
+  font-weight: 400; /* largeur de la police */
+  font-size: 1.3em; /* taille de la police */
+  border : solid black 2px; /*affiche une bordure tout autour de chaque tableaux de résultat de la boucle while*/
+		
+}
+.titre {
+  grid-area :   titre;
+		padding-top: 10px;
+}
+.titre_reponse{
+  grid-area :   titre_reponse;
+		padding-top: 10px;
+	font-size: 1.3em;
+	
+}
+.auteur {
+    grid-area:  auteur;
+				padding-top: 10px;
+}
+.auteur_reponse{
+  grid-area:  auteur_reponse;
+		padding-top: 10px;
+}
+.nb_tomes {
+  grid-area :  tome;
+		padding-top: 10px;
+}
+.nb_tomes_reponse {
+  grid-area:  tome_reponse;
+		padding-top: 10px;
+}
+.nb_pages {
+	grid-area: nb_pages;
+	padding-top: 10px;
+}
+.nb_pages_reponse {
+	grid-area: nb_pages_reponse;
+	padding-top: 10px;
+}
+.debut {
+  grid-area:  debut;
+		padding-top: 10px;
+}
+.debut_reponse {
+  grid-area:  debut_reponse;
+		padding-top: 10px;
+}
+.fin {
+  grid-area:  fin;
+		padding-top: 10px;
+}
+.fin_reponse {
+  grid-area:  fin_reponse;
+		padding-top: 10px;
+}
+.decompte_lecture {
+	grid-area: decompte_lecture;
+	padding-top: 10px;
+}
+.decompte_lecture_reponse {
+	grid-area:	decompte_lecture_reponse;
+	padding-top: 10px;
+	color: #3300CC;
+	text-transform: uppercase; /*transforme l'élément avec des lettres capitales */
+}
+.remarques {
+  grid-area:  remarques;
+		padding-top: 10px;
+}
+.remarques_reponse {
+  grid-area:  remarques_reponse;
+		padding-top: 10px;
+}
+.temps_lecture {
+	grid-area: temps_lecture;
+	padding-top: 10px;
+}
+
+.date_ajout {
+  grid-area : date_ajout;
+		padding-top: 10px;
+}
+.date_ajout_reponse {
+  grid-area: date_ajout_reponse;
+		padding-top: 10px;
+}
+.img_couv {
+  grid-area: img_couv;
+		text-align: center;
+}
+.bouton_modifier {
+  grid-area: bouton_modifier;
+  font-family: 'Orbitron', sans-serif;
+}
+.bouton_supprimer {
+  grid-area: bouton_supprimer;
+  font-family: 'Orbitron', sans-serif;
+}
