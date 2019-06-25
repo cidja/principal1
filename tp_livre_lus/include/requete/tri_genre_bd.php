@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php /*on inclu directement le fichier php comme cela on peut travailler tranquillement sur les requêtes ensuite ça évite les erreurs */
-           include_once ('/var/www/public/private/tp_livre_lus/php/connexion.php'); /*J'inclus le fichier connexion.php situé dans le dosssier php
+           require_once ('/var/www/public/private/git/tp_livre_lus/include/config.inc.php'); /*J'inclus le fichier connexion.php situé dans le dosssier php
            *pour éviter de surcharger le code accueil et pour une meilleure
            *lisibilité du code*/
   $_SERVER['DOCUMENT_ROOT']; //Si l'on veut connaitre la racine du serveur web pour un affichage en chemin absolu comme indiqué au dessus
@@ -23,20 +23,18 @@
             <h1 id='titre_principal_haut_page'>
                 Liste des BD lus par Christian GEORGES
                 <br/>
-                Classée par Série (Boule et bill, Leonard, Etc...)
+                Classée par genre(aventure, humour, histoire, ...)
             </h1>
-                <br/> <!--On centre le titre sur la page !-->
                
-               <?php
+            <?php
     $comptage = $bdd->query('SELECT COUNT(id) FROM bd'); //utilisé pour lire le nombre d'entrée dans un tableau, ici le nombre de livres via les titres
     ?>
     
     <div id='compteur_total'>Compteur de BD lus : <?php echo $comptage->fetchColumn(); ?></div>
-            
             <?php
             /*requete d'affichage à la base de données des 15 derniers résultats avec la fonction ORDER BY ... DESC */
-            $reponse = $bdd->query('SELECT id,serie,titre,scenario,dessin,album_numero,genre,remarques,img_couv,DATE_FORMAT(date_ajout, "%d-%m-%Y  à %Hh%i:%ssec") as date_fr FROM bd  ORDER BY serie LIMIT 25');
-                //Requête pour le classement par série via ORDER BY
+            $reponse = $bdd->query('SELECT id,serie,titre,scenario,dessin,album_numero,genre,remarques,img_couv,DATE_FORMAT(date_ajout, "%d-%m-%Y  à %Hh%i:%ssec") as date_fr FROM bd  ORDER BY genre LIMIT 25');
+                //Requête pour le classement par genre avec ORDER BY dans la requete
             
                                     //fonction date_format permet de mettre la date au format que je souhaite ici ex: date d'ajout : 20-01-2019 à 20h40:24sec
             while($donnees = $reponse->fetch())
@@ -106,7 +104,6 @@
                           </div> <!--Condition if else qui inscrit un message si date ajout correspond à 0 !-->
                           
                         <div class='img_couv'><img class='img_couv_bd' src="<?php echo $donnees['img_couv'];?>"/></div> <!--affichage de la couverture du livre qui est dans un dossier img en local et uniquement le chemin d'accès dans la bdd !-->
-                            
                         <?php
                         include('/var/www/public/private/tp_livre_lus/php/boutons_modif_suppr_bd.php'); ?>
 

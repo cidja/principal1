@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php /*on inclu directement le fichier php comme cela on peut travailler tranquillement sur les requêtes ensuite ça évite les erreurs */
-           include_once ('/var/www/public/private/tp_livre_lus/php/connexion.php'); /*J'inclus le fichier connexion.php situé dans le dosssier php
+           require_once ('/var/www/public/private/git/tp_livre_lus/include/config.inc.php'); /*J'inclus le fichier connexion.php situé dans le dosssier php
            *pour éviter de surcharger le code accueil et pour une meilleure
            *lisibilité du code*/
   $_SERVER['DOCUMENT_ROOT']; //Si l'on veut connaitre la racine du serveur web pour un affichage en chemin absolu comme indiqué au dessus

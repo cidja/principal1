@@ -11,9 +11,9 @@
     <h2><a href='../accueil_caroussel.php'>Retour au carroussel</a></h2>
 <?php
 
-include ('/wamp64/www/private/git/tp_livre_lus/php/connexion.php'); /*J'inclus le fichier connexion.php situé dans le dosssier php
-    *pour éviter de surcharger le code accueil et pour une meilleure
-    *lisibilité du code*/
+require_once ('/var/www/public/private/git/tp_livre_lus/include/config.inc.php'); /*J'inclus le fichier connexion.php situé dans le dosssier php
+           *pour éviter de surcharger le code accueil et pour une meilleure
+           *lisibilité du code*/
 
 
 
@@ -93,15 +93,8 @@ echo 'Le : ' , $donnees['date_fr'] ,' ajouté il y a ' , $jour , ' jours';
 
 <div class='img_couv'><img class='img_couv_bd' src="<?php echo $donnees['img_couv'];?>"/></div> <!--affichage de la couverture du livre qui est dans un dossier img en local et uniquement le chemin d'accès dans la bdd !-->
 
-
-<form method='get' action='php/form_modif_bd.php' name='modification'/>
-<input type='hidden' name='id' id='id' value="<?php echo $donnees['id'];?>"/>
-<input type='submit' value='modifier' class='bouton_modif'/></form> <!-- class donnée pour mettre dans la grille css!-->
-<form method='post' action='php/delete_one_bd.php' name='delete'/>
-<input type='hidden' name='id' id='id' value='<?php echo $donnees['id'];?>'/> <!--on récupére l'id actuel du tableau pour le transférer sur delete_one !-->
-<input type='hidden' name='titre_delete' id='titre_delete' value='<?php echo $donnees['titre']; ?>'/> <!--on récupére le titre actuel du tableau pour le transférer sur delete_one !-->
-<input type='submit' value='supprimer' class='bouton_supprimer'/> <!-- class donnée pour mettre dans la grille css!-->
-</form>
+<?php include('/var/www/public/private/git/tp_livre_lus/php/boutons_modif_suppr_bd.php'); //inclusion des boutons supprimer et modification
+?>
 
 </div><br/><br/> <!--on break pour laisser de l'espace entre chaque tableaux !-->
 <?php //je réouvre balises php pour clôturer la requête

@@ -13,9 +13,9 @@
     /*include_once (car besoin qu'une seule fois) du fichier menu.html pour l'affichage du menu dans toutes les pages c'est plus simple pour la gestion */
     include_once ('menu.html'); 
 
-    include ('php/connexion.php'); /*J'inclus le fichier connexion.php situé dans le dosssier php
-    *pour éviter de surcharger le code accueil et pour une meilleure
-    *lisibilité du code*/
+    require_once ('/var/www/public/private/git/tp_livre_lus/include/config.inc.php'); /*J'inclus le fichier connexion.php situé dans le dosssier php
+           *pour éviter de surcharger le code accueil et pour une meilleure
+           *lisibilité du code*/
     /*requete d'affichage à la base de données*/
     $reponse = $bdd->query('SELECT id,titre,auteur,tome,nb_pages,debut,fin,remarques,img,
     DATE_FORMAT(date_ajout, "%d-%m-%Y  à %Hh%i:%ssec") as date_fr FROM livres_lus  ORDER BY id DESC LIMIT 30');

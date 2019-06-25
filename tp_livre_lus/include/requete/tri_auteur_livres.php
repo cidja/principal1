@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php 
-include_once ('/var/www/public/private/tp_livre_lus/php/connexion.php'); /*J'inclus le fichier connexion.php situé dans le dosssier php
+require_once ('/var/www/public/private/git/tp_livre_lus/include/config.inc.php'); /*J'inclus le fichier connexion.php situé dans le dosssier php
 *pour éviter de surcharger le code accueil et pour une meilleure
 *lisibilité du code*/
 $_SERVER['DOCUMENT_ROOT']; //Si l'on veut connaitre la racine du serveur web pour un affichage en chemin absolu comme indiqué au dessus
@@ -12,24 +12,27 @@ $_SERVER['DOCUMENT_ROOT']; //Si l'on veut connaitre la racine du serveur web pou
             <meta charset='utf-8'/> <!--on choisi utf-8 comme encodage car affiche tous bien accents y compris!-->
             <link rel='stylesheet' href='/private/git/tp_livre_lus/css/style.css'/> <!--chemin absolu plus pratique que de devoir composer avec l'emplacement du fichier !-->
             <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet"> <!--On ajoute une font google!-->
-            <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Orbitron" rel="stylesheet">  <!--une autre font google !-->
+            <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Orbitron" rel="stylesheet">  
         </head>
         <body>
         <?php
           /*include du fichier menu.html pour l'affichage du menu dans toutes les pages c'est plus simple pour la gestion */
-           include ('../../menu.html'); 
+           include ('../../menu.html');
           ?> 
+            
+            
             <h1 id='titre_principal_haut_page'>
             Liste des livres lus par Christian GEORGES
             <br/>
-            Classé par titre (par ordre alphabétique)
+            Classé par auteur (par ordre alphabétique)
             </h1>
+            <!--On centre le titre sur la page !-->
             <?php
     $comptage = $bdd->query('SELECT COUNT(tome) FROM livres_lus'); //utilisé pour lire le nombre d'entrée dans un tableau, ici le nombre de livres via les titres
     ?>
     <div id='compteur_total'>Compteur de livres lus : <?php echo $comptage->fetchColumn(); ?>
   </div>
-           
+     
            <?php
             $jour = '00';
             $heure = '00';
@@ -40,7 +43,7 @@ $_SERVER['DOCUMENT_ROOT']; //Si l'on veut connaitre la racine du serveur web pou
 
             /*requete d'affichage à la base de données des 15 derniers résultats avec la fonction ORDER BY ... DESC */
             $reponse = $bdd->query('SELECT id,titre,auteur,tome,nb_pages,debut,fin,remarques,img,
-                                   DATE_FORMAT(date_ajout, "%d-%m-%Y  à %Hh%i:%ssec") as date_fr FROM livres_lus  ORDER BY titre');
+                                   DATE_FORMAT(date_ajout, "%d-%m-%Y  à %Hh%i:%ssec") as date_fr FROM livres_lus  ORDER BY auteur');
                                     //fonction date_format permet de mettre la date au format que je souhaite pour date_debut, date_fin_ date_ajout
             while($donnees = $reponse->fetch())
                 {   /*j'ai organisé cette boucle afin d'avoir à chaque fois un saut à la ligne pour afficher les

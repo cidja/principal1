@@ -16,9 +16,9 @@
           ?> 
           <h2><a href='../accueil_caroussel_livre.php'>Retour au carroussel des livres</a></h2>
           <?php
-           require_once ('/wamp64/www/private/git/mon_site_web/tp_livre_lus/php/connexion.php'); /*J'inclus le fichier connexion.php situé dans le dosssier php
-                                            *pour éviter de surcharger le code accueil et pour une meilleure
-                                            *lisibilité du code*/
+           require_once ('/var/www/public/private/git/tp_livre_lus/include/config.inc.php'); /*J'inclus le fichier connexion.php situé dans le dosssier php
+           *pour éviter de surcharger le code accueil et pour une meilleure
+           *lisibilité du code*/
  // $_SERVER['DOCUMENT_ROOT']; //Si l'on veut connaitre la racine du serveur web pour un affichage en chemin absolu comme indiqué au dessus
             /*pour créer un compteur depuis quand l'ajout du livre a était fait */
 

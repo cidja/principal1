@@ -1,7 +1,4 @@
 <?php
-include_once('/var/www/public/private/git/livres_lus_new/include/db_new.php');
-include_once('/var/www/public/private/git/livres_lus_new/include/config.inc.php');
-
 ini_set('display_errors', 'on');
 date_default_timezone_set('Europe/Paris'); //validation de la date par défaut ici paris
 setlocale(LC_MONETARY, 'fr_FR'); // Modifie les informations de localisation source: https://www.php.net/manual/fr/function.setlocale.php
@@ -13,8 +10,6 @@ DEFINE('SQL_USER', 'sudo');
 DEFINE('SQL_PASSWORD', 'boby06');
 
 
-function connexion(){
-    global $bdd;
 
     try{
 
@@ -32,7 +27,7 @@ catch(PDOException $e)
 {
     die('erreur :' .$e->getMessage());
 }
-}
+
 
 
 $GLOBALS['today'] = date('Y-m-d');

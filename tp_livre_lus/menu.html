@@ -3,30 +3,30 @@
     <head>
         <title>Menu</title>
         <meta charset='utf8'/>
-        <link rel='stylesheet' href='/private/tp_livre_lus/css/style_menu.css'/>
+        <link rel='stylesheet' href='/private/git/tp_livre_lus/css/style_menu.css'/>
     </head>
     <body>
         <nav>
             <ul>
                 <!--tout mis en chemin absolu en dessous car il est appelé sur plusieurs pages, j'ai fais les tests sinon en relatif ça ne fonctionne pas
                 du fait que la page change d'emplacement selon où on l'appel-->
-                <li class='menu_accueil'><a href='/private/tp_livre_lus/accueil_principal.php'>Accueil</a></li>
-                <li class='menu_livre'><a href='/private/tp_livre_lus/accueil_choix_livres.php'>Livres</a>
+                <li class='menu_accueil'><a href='/private/git/tp_livre_lus/index_accueil.php'>Accueil</a></li>
+                <li class='menu_livre'><a href='/private/git/tp_livre_lus/accueil_choix_livres.php'>Livres</a>
                     <ul class='submenu'>
-                        <li> <a href='/private/tp_livre_lus/php/requete/tri_auteur_livres.php'> Classement par auteur</a></li>
-                        <li> <a href='/private/tp_livre_lus/php/requete/tri_titre_livres.php'> Classement par titre</a></li>
+                        <li> <a href='/private/git/tp_livre_lus/include/requete/tri_auteur_livres.php'> Classement par auteur</a></li>
+                        <li> <a href='/private/git/tp_livre_lus/include/requete/tri_titre_livres.php'> Classement par titre</a></li>
                     </ul>
                 </li>
-                <li class='menu_bd'><a href='/private/tp_livre_lus/accueil_bd.php'>BD</a>
+                <li class='menu_bd'><a href='/private/git/tp_livre_lus/accueil_bd.php'>BD</a>
                     <ul class='submenu'>
-                        <li> <a href='/private/tp_livre_lus/php/requete/tri_genre_bd.php'> Classement par genre</a></li>
-                        <li> <a href='/private/tp_livre_lus/php/requete/tri_serie_bd.php'> Classement par série</a></li>
+                        <li> <a href='/private/git/tp_livre_lus/include/requete/tri_genre_bd.php'> Classement par genre</a></li>
+                        <li> <a href='/private/git/tp_livre_lus/include/requete/tri_serie_bd.php'> Classement par série</a></li>
                     </ul>
                 </li>
                 <li class='menu_rajout'><a>Rajout</a> 
                     <ul class='submenu'>
-                        <li> <a href='/private/tp_livre_lus/php/rajout.php'>Rajout livre</a></li>
-                        <li> <a href='/private/tp_livre_lus/php/rajout_bd.php'>Rajout bd</a></li>
+                        <li> <a href='/private/git/tp_livre_lus/php/rajout.php'>Rajout livre</a></li>
+                        <li> <a href='/private/git/tp_livre_lus/php/rajout_bd.php'>Rajout bd</a></li>
                     </ul>
                 </li>
             </ul>
