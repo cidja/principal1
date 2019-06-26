@@ -1,5 +1,7 @@
 <?php
-include ('connexion.php'); //on inclue le
+include ('/var/www/public/private/git/tp_livre_lus/include/config.inc.php'); /*J'inclus le fichier connexion.php situé dans le dosssier php
+*pour éviter de surcharger le code accueil et pour une meilleure
+*lisibilité du code*/
 
 
 /*on transforme la superglobale variable $_POST en variable plus
@@ -28,5 +30,5 @@ $req_update->execute(array(
 ));
 $req_update->closeCursor(); //On ferme la curseur php pour le libérer pour une prochaine requête
 
-header('Location:\private\git\mon_site_web\tp_livre_lus\accueil_caroussel_livre.php'); //pour la redirection vers l'accueil directement le client ne verra pas ça
+header('Location:/private/git/tp_livre_lus/accueil_caroussel_livre.php'); //pour la redirection vers l'accueil directement le client ne verra pas ça
 ?>

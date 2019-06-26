@@ -10,7 +10,7 @@
         <head>
             <title>Mes Bandes dessinées lus</title>
             <meta charset='utf-8'/> <!--on choisi utf-8 comme encodage car affiche tous bien accents y compris!-->
-            <link rel='stylesheet' href='/private/tp_livre_lus/css/style_bd.css'/> <!--chemin absolu plus pratique pour le retrouver si je modifie l'emplacement de ce fichier php !-->
+            <link rel='stylesheet' href='../../css/style_bd.css'/> <!--chemin absolu plus pratique pour le retrouver si je modifie l'emplacement de ce fichier php !-->
             <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">  <!--On ajoute une font google!-->
             <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Orbitron" rel="stylesheet">  <!--une autre font google !-->
         </head>
@@ -105,7 +105,8 @@
                           
                         <div class='img_couv'><img class='img_couv_bd' src="<?php echo $donnees['img_couv'];?>"/></div> <!--affichage de la couverture du livre qui est dans un dossier img en local et uniquement le chemin d'accès dans la bdd !-->
                         <?php
-                        include('/var/www/public/private/tp_livre_lus/php/boutons_modif_suppr_bd.php'); ?>
+                        include('../../php/boutons_modif_suppr_bd.php'); //on remonte de 2 niveaux pour atteindre boutons modif
+                        ?>
 
                     </div><br/><br/> <!--on break pour laisser de l'espace entre chaque tableaux !-->
                 <?php //je réouvre balises php pour clôturer la requête

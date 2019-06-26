@@ -9,8 +9,6 @@ DEFINE('SQL_BDD', 'livre');
 DEFINE('SQL_USER', 'sudo');
 DEFINE('SQL_PASSWORD', 'boby06');
 
-
-
     try{
 
 

@@ -10,7 +10,7 @@
         <head>
             <title>Mes livres lus</title>
             <meta charset='utf-8'/> <!--on choisi utf-8 comme encodage car affiche tous bien accents y compris!-->
-            <link rel='stylesheet' href='/private/git/mon_site_web/tp_livre_lus/css/style.css'/>
+            <link rel='stylesheet' href='css/style.css'/>
             <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet"> <!--On ajoute une font google!-->
             <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Orbitron" rel="stylesheet">  
         </head>

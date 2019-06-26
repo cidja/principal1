@@ -1,6 +1,8 @@
 <?php
 
-include ('connexion.php'); //on se connecte à la base livres
+include ('/var/www/public/private/git/tp_livre_lus/include/config.inc.php'); /*J'inclus le fichier connexion.php situé dans le dosssier php
+            *pour éviter de surcharger le code accueil et pour une meilleure
+            *lisibilité du code*/
 
 $mdp   = $_POST['mdp']; //on récupére la superglobale $_POST qu'on transforme en variable c'est plus simple à travailler
 $id    = $_POST['id'];  //on récupére la superglobale $_POST qu'on transforme en variable c'est plus simple à travailler
@@ -13,12 +15,12 @@ if($mdp == 'secret')
         ));
         $req_delete->closeCursor(); //On ferme le pointeur php pour une autre requête
         ?>
-        <div class='msg_confirm_delete'>Le titre a bien était supprimé. Pour revenir à l'accueil <a href='\private\git\mon_site_web\tp_livre_lus\accueil_caroussel_livre.php'>Cliquer ici</a></div>
+        <div class='msg_confirm_delete'>Le titre a bien était supprimé. Pour revenir à l'accueil <a href='/private/git/tp_livre_lus/accueil_caroussel_livre.php'>Cliquer ici</a></div>
         <?php
     }
 else
     {
-        ?> Mauvais mot de passe <a href='\private\git\mon_site_web\tp_livre_lus\accueil_caroussel_livre.php'>réessayer</a>
+        ?> Mauvais mot de passe <a href='/private/git/tp_livre_lus/accueil_caroussel_livre.php'>réessayer</a>
         <?php
     }
     ?>

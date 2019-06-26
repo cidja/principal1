@@ -4,7 +4,7 @@
         <head>
             <title>Mes livres lus</title>
             <meta charset='utf-8'/> <!--on choisi utf-8 comme encodage car affiche tous bien accents y compris!-->
-            <link rel='stylesheet' href='/private/git/mon_site_web/tp_livre_lus/css/style.css'/>
+            <link rel='stylesheet' href='/private/git/tp_livre_lus/css/style.css'/>
             <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet"> <!--On ajoute une font google!-->
             <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Orbitron" rel="stylesheet">  
         </head>
@@ -161,14 +161,14 @@
 
                         <?php
                         // J'inclus le fichier du décompte du nombre de page de lecture plus aisément modifiable directement dans un seul fichier
-                        include ('C:\wamp64\www\private\git\mon_site_web\tp_livre_lus\php\decompte_temps_lecture.php'); 
+                        include ('/var/www/public/private/git/tp_livre_lus/php/decompte_temps_lecture.php'); 
                         ?>
 
                         <div class='img_couv'>
                          <img class='img_couv_livre' src="<?php echo $donnees['img'];?>"/>
                         </div> <!--affichage de la couverture du livre qui est dans un dossier img en local et uniquement le chemin d'accès dans la bdd !-->
                        
-                        <?php include('C:\wamp64\www\private\git\mon_site_web\tp_livre_lus\php\boutons_modif_suppr_livre.php'); //fichier inclusion pour les deux boutons supprimer et modifeier au moins pas de galère si je dois revenir dessus//
+                        <?php include('/var/www/public/private/git/tp_livre_lus/php/boutons_modif_suppr_livre.php'); //fichier inclusion pour les deux boutons supprimer et modifeier au moins pas de galère si je dois revenir dessus//
               
                 //Pour voir les jours, ans etc... en dessous
                 //  echo 'ajouté il y a : ' .  $annee.' ans / '.$mois.' mois / '.$jour.' jours / '.$heure.' heures / '.$minute.' minutes / '.$seconde.' secondes <br />';                

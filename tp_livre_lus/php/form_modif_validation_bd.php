@@ -1,5 +1,7 @@
 <?php
-include ('connexion.php'); //on se connecte à la base livres
+include ('/var/www/public/private/git/tp_livre_lus/include/config.inc.php'); /*J'inclus le fichier connexion.php situé dans le dosssier php
+*pour éviter de surcharger le code accueil et pour une meilleure
+*lisibilité du code*/
 
 $id             = htmlspecialchars($_POST['id']); //On récupére la superglobale du form $_POST qu'on transforme en variable c'est plus simple pour travailler
 $scenario       = htmlspecialchars($_POST['scenario']);

@@ -1,6 +1,8 @@
 <?php
 
-include ('connexion.php'); //on se connecte à la base livres
+include ('/var/www/public/private/git/tp_livre_lus/include/config.inc.php'); /*J'inclus le fichier connexion.php situé dans le dosssier php
+            *pour éviter de surcharger le code accueil et pour une meilleure
+            *lisibilité du code*/
 
 $mdp   = $_POST['mdp']; //on récupére la superglobale $_POST qu'on transforme en variable c'est plus simple à travailler
 $id    = $_POST['id'];  //on récupére la superglobale $_POST qu'on transforme en variable c'est plus simple à travailler

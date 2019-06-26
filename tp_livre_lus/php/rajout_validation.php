@@ -1,6 +1,8 @@
 <?php
 /*on se connecte d'abord à la base de données*/
-include ('connexion.php'); // Connexion à la base de données
+include ('/var/www/public/private/git/tp_livre_lus/include/config.inc.php'); /*J'inclus le fichier connexion.php situé dans le dosssier php
+            *pour éviter de surcharger le code accueil et pour une meilleure
+            *lisibilité du code*/
     
     
 /*if(isset($_POST['titre']) AND isset ($_POST['auteur']) AND isset ($_POST['tome']) AND isset($_POST['debut']) AND isset($_POST['fin']))
@@ -39,7 +41,7 @@ $req->execute(array(
 ));
 $req->closeCursor(); //on ferme le curseur pour si une autre requête se prépare ensuite
 
-header('Location:\private\git\mon_site_web\tp_livre_lus\accueil_caroussel_livre.php'); //pour la redirection vers l'accueil directement le client ne verra pas ça
+header('Location:/private/git/tp_livre_lus/accueil_caroussel_livre.php'); //pour la redirection vers l'accueil directement le client ne verra pas ça
 ?>
 <!--<br/>Pour retourner à l'accueil <a href='//accueil.php'>Cliquer ici</a>  !-->
 

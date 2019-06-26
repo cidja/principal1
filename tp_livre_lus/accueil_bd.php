@@ -10,7 +10,7 @@
         <head>
             <title>Mes Bandes dessinées lus</title>
             <meta charset='utf-8'/> <!--on choisi utf-8 comme encodage car affiche tous bien accents y compris!-->
-            <link rel='stylesheet' href='/private/tp_livre_lus/css/style_bd.css'/> <!--chemin absolu plus pratique pour le retrouver si je modifie l'emplacement de ce fichier php !-->
+            <link rel='stylesheet' href='css/style_bd.css'/> <!--chemin absolu plus pratique pour le retrouver si je modifie l'emplacement de ce fichier php !-->
             <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">  <!--On ajoute une font google!-->
             <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Orbitron" rel="stylesheet">  <!--une autre font google !-->
         </head>
