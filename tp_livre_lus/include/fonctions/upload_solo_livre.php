@@ -1,6 +1,8 @@
 <?php
-include_once('/var/www/public/private/git/labo/fonctions/connexion.php');
-$uploaddir = "/var/www/public/private/git/labo/img/";
+require_once ('/var/www/public/private/git/tp_livre_lus/include/config.inc.php'); /*J'inclus le fichier connexion.php situé dans le dosssier php
+*pour éviter de surcharger le code accueil et pour une meilleure
+*lisibilité du code*/
+$uploaddir = "/var/www/public/private/git/tp_livre_lus/img/couv_livres";
 $uploadfile = $uploaddir . basename($_FILES['tabfichier']['name']);
 
 //via la fonction substr qui coupe les string comme l'on souhaite je découple $uploadfile pour ne garder que 
@@ -30,8 +32,9 @@ if(in_array($_FILES['tabfichier']['type'], $ext_type)){
          //requête sql utilisé pour rentrer directement dans la base de données labo1 le lien 
          //pour afficher l'image sur le site (image stocké dans /var/www/public/private/git/labo/img/)
          //source:  http://www.lephpfacile.com/manuel-php/pdostatement.execute.php
-         
-    $req = $bdd->prepare('INSERT INTO labo1(img) VALUES (?)');
+    
+         $id = $_POST['id'];
+    $req = $bdd->prepare('INSERT INTO livre(img) VALUES (?) WHERE id=:id');
     $req->execute(array( //j'exécute la requête préparée avec comme argument $uploadfile
         $uploadfile_bdd
     ));
@@ -40,7 +43,7 @@ if(in_array($_FILES['tabfichier']['type'], $ext_type)){
 }
 
 else{
-    ?> le fichier n'nest pas valide <a href='televerse_labo.php'>cliquer ici pour réessayer</a>' <!--si pas valide on renvoi le visiteur sur la page d'upload!-->
+    ?> le fichier n'nest pas valide <a href='televerse_img_livre.php'>cliquer ici pour réessayer</a>' <!--si pas valide on renvoi le visiteur sur la page d'upload!-->
     <?php
 }
 

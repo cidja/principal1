@@ -13,6 +13,10 @@
             *pour éviter de surcharger le code accueil et pour une meilleure
             *lisibilité du code*/
 
+            //inclusion du fichier avec les fonctions utiles
+            require_once('/var/www/public/private/git/tp_livre_lus/include/fonction.inc.php'); 
+     
+
             $id_accueil = $_GET['id']; //On récupére la superglobale du form accueil_grille_test.php qu'on transforme en variable c'est plus simple pour travailler
                 //fonction qui récupére toutes les données avec une requête préparée
             $sql = $bdd->prepare('SELECT id,titre,auteur,tome,nb_pages,debut,fin,remarques,img FROM livres_lus WHERE id= :id_accueil'); //on prépare la requête on a enlevé date dans les paramétres car inutile sur cette requête
@@ -20,6 +24,7 @@
                                                                          *entier sur lequel on travail source: https://secure.php.net/manual/fr/pdostatement.bindvalue.php */
             $sql ->execute();                                           //Pour finir on execute la requête
             $reponse = $sql->fetch();   //Avec fetch on parcourt le tableau un par un */
+      
             ?>
             
             <p>Bienvenue dans l'endroit pour modifier les informations de l'ouvrage : <?php echo $reponse['titre'];?><p>
@@ -50,7 +55,11 @@
                 <input type='text' class='img_form_reponse' name='img' id='img' value = '<?php echo $reponse['img']?>'/>
             <br/>
             <div class='text_img'> Image de couverture actuelle : </div> <br/>
-                <?php
+                <?php  
+                $id = $reponse['id']; //utilisé pour modifier le download de l'image de couv 
+                $couv_livre = downloadCouvlivre($id);
+                
+                /*
                     if(empty($reponse['img']))
                      {
                         echo 'il n\'y a pas d\'image de couverture actuellement c\'est le moment d\'en mettre une lancez-vous ! ';
@@ -61,6 +70,8 @@
                        <img  class='couv_presente' src='<?php echo $reponse['img'];?>'/>
                        <?php
                      }
+
+                     */
                 ?>
             </div> <!-- fin du div  pour la grille pour les choix des boutons !-->
             <input type='submit' value='valider'/>

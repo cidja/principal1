@@ -1,6 +1,8 @@
 <?php
 /*on se connecte d'abord à la base de données*/
-include ('connexion.php'); // Connexion à la base de données
+require_once ('/var/www/public/private/git/tp_livre_lus/include/config.inc.php'); /*J'exige une fois (require_once) le fichier connexion.php situé dans le dosssier php
+                                            *pour éviter de surcharger le code accueil et pour une meilleure
+                                            *lisibilité du code surtout si les mdp viennent à changer c'est plus simple*/
     
     
 /*if(isset($_POST['titre']) AND isset ($_POST['scenario']) AND isset ($_POST['album_numero']) AND isset($_POST['debut']) AND isset($_POST['fin']))
